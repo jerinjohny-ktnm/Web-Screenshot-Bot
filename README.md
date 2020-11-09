@@ -6,7 +6,7 @@
 A Telegram _Web-Screenshot_ Bot Based on Pyrogram
 # Introduction
 
-Telegram Bot that creates screenshot _[PNG/JPEG]_ or PDF of a given link. Can be matched with various other settings like resolution, partial or fullpage rendering and background rendering. The bot can be currently found in @BetterWebShotBot.
+Telegram Bot that creates screenshot _[PNG/JPEG]_ or PDF of a given link. Can be matched with various other settings like resolution, partial or fullpage rendering and background rendering. The bot can be currently found in [@getthatsitebot](https://telegram.dog/getthatsitebot)
 
 ### Available Resolutions are :
 
