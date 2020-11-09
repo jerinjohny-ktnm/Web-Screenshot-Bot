@@ -48,8 +48,8 @@ async def feedback(_: Client, message: Message) -> None:
         text="This project is open ❤️ source",
         reply_markup=InlineKeyboardMarkup([
             [
-                InlineKeyboardButton("👨🏻‍🦯 Source", url="https://github.com/alenpaul2001/Web-Screenshot-Bot"),
-                InlineKeyboardButton("❓ Bug Report", url="https://github.com/alenpaul2001/Web-Screenshot-Bot/issues")],
+                InlineKeyboardButton("👨🏻‍🦯 Source", url="https://github.com/jerinjohny-ktnm/Web-Screenshot-Bot"),
+                InlineKeyboardButton("❓ Bug Report", url="https://github.com/jerinjohny-ktnm/Web-Screenshot-Bot/issues")],
             [InlineKeyboardButton(
                 "🌃 Profile Icon Credit",
                 url="https://www.goodfon.com/wallpaper/art-vector-background-illustration-minimalism-angga-tanta-12.html")]
