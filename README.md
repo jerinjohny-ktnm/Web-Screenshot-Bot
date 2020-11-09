@@ -19,6 +19,9 @@ Spliting of long pages is available for png and jpeg, upto 10 images is sent as 
 
 # Installing 
 
+### Heroku
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jerinjohny-ktnm/Web-Screenshot-Bot.git)
+
 ### <b>The Legacy Way</b>
 Simply clone the repository and run the main file:
 
