@@ -49,7 +49,7 @@ class Printer(object):
         self.PID = _pid
         self.fullpage = True
         self.split = False
-        self.name = f"@Webs-Screenshot.{self.type}"
+        self.name = f"@getthatsitebot.{self.type}"
 
     def __str__(self):
         res = f'{self.resolution["width"]}+{self.resolution["height"]}'
@@ -98,9 +98,9 @@ async def split_func(out: io.BytesIO, _format: str) -> List[io.BytesIO]:
         upper += slice_size
         # saving = the slice
         if 'jpeg' in _format:
-            location_to_save_slice = f'@Webs.ScreenCapture-{str(count)}.jpeg'
+            location_to_save_slice = f'@getthatsitebot-{str(count)}.jpeg'
         else:
-            location_to_save_slice = f'@Webs.ScreenCapture-{str(count)}.png'
+            location_to_save_slice = f'@getthatsitebot-{str(count)}.png'
         split_out = io.BytesIO()
         split_out.name = location_to_save_slice
         working_slice.save(fp=split_out, format=_format)
@@ -118,7 +118,7 @@ async def zipper(location_of_image: List[io.BytesIO]) -> io.BytesIO:
         for files in location_of_image:
             zipper.writestr(files.name, files.getvalue())
             files.close()
-    zipped_file.name = "@Webs-Screenshot.zip"
+    zipped_file.name = "@getthatsitebot.zip"
     return zipped_file
 
 
@@ -155,7 +155,7 @@ async def draw(name: str, metrics: dict) -> io.BytesIO:
     return_object = io.BytesIO()
     main_paper.save(return_object, format='png')
     main_paper.close()
-    return_object.name = "@Webs-Screenshot.png"
+    return_object.name = "@getthatsitebot.png"
     return return_object
 
 
