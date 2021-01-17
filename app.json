@@ -1,7 +1,7 @@
 {
-  "name": "Web-shot BOT",
+  "name": "getthatsitebot",
   "description": "A bot to render websites and upload the imageto telegraph",
-  "repository": "https://github.com/alenpaul2001/Web-Screenshot-Bot",
+  "repository": "https://github.com/jerinjohny-ktnm/Web-Screenshot-Bot",
   "keywords": ["telegram", "telegraph", "website","telegram bot"],
   "env": {
      "BOT_TOKEN": {
