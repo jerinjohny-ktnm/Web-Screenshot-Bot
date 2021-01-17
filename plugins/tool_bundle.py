@@ -142,7 +142,7 @@ async def draw(name: str, metrics: dict) -> io.BytesIO:
     draw = ImageDraw.Draw(font_paper)
     w, h = font.getsize(name)
     draw.text(((265-w)/2, (100-h)/2), name, font=font, fill="black")
-    main_paper = Image.open(io.BytesIO(get("https://telegra.ph/file/b1ee73bcb988442d163c5.jpg").content))
+    main_paper = Image.open(io.BytesIO(get("https://telegra.ph/file/d7293bbb2e851071e8e81.png").content))
     LOGGER.info('WEB_SCRS --> site_metrics >> main paper created')
     await asyncio.sleep(0.2)
     main_paper.paste(font_paper, (800, 460, 1065, 560))
