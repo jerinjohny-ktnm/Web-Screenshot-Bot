@@ -49,7 +49,7 @@ class Printer(object):
         self.PID = _pid
         self.fullpage = True
         self.split = False
-        self.name = f"@getthatsitebot.{self.type}"
+        self.name = f"@sswebbot.{self.type}"
 
     def __str__(self):
         res = f'{self.resolution["width"]}+{self.resolution["height"]}'
@@ -98,9 +98,9 @@ async def split_func(out: io.BytesIO, _format: str) -> List[io.BytesIO]:
         upper += slice_size
         # saving = the slice
         if 'jpeg' in _format:
-            location_to_save_slice = f'@getthatsitebot-{str(count)}.jpeg'
+            location_to_save_slice = f'@sswebbot-{str(count)}.jpeg'
         else:
-            location_to_save_slice = f'@getthatsitebot-{str(count)}.png'
+            location_to_save_slice = f'@sswebbot-{str(count)}.png'
         split_out = io.BytesIO()
         split_out.name = location_to_save_slice
         working_slice.save(fp=split_out, format=_format)
@@ -118,7 +118,7 @@ async def zipper(location_of_image: List[io.BytesIO]) -> io.BytesIO:
         for files in location_of_image:
             zipper.writestr(files.name, files.getvalue())
             files.close()
-    zipped_file.name = "@getthatsitebot.zip"
+    zipped_file.name = "@sswebbot.zip"
     return zipped_file
 
 
@@ -321,7 +321,7 @@ async def primary_task(client: Client, msg: Message, queue=[]) -> None:
                 with open(f'{location}/{byte_objects.name}', 'wb') as writer:
                     writer.write(byte_objects.getvalue())
                 byte_objects.close()
-            await random_message.edit(text='<b><i>uploading...</b></i>')
+            await random_message.edit(text='<b><i>UPLOADING...</b></i>')
             location_to_send = []
             for count, images in enumerate(location_of_image, start=1):
                 location_to_send.append(InputMediaPhoto(
@@ -344,7 +344,7 @@ async def primary_task(client: Client, msg: Message, queue=[]) -> None:
             return
     if not printer.fullpage and not printer.type == 'pdf':
         LOGGER.debug(f'WEB_SCRS:{printer.PID} --> split setting not found >> sending directly')
-        await random_message.edit(text='<b><i>uploading...</b></i>')
+        await random_message.edit(text='<b><i>UPLOADING...</b></i>')
         await client.send_chat_action(
             msg.chat.id,
             "upload_photo"
