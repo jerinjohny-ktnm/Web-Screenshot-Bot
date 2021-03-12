@@ -321,7 +321,7 @@ async def primary_task(client: Client, msg: Message, queue=[]) -> None:
                 with open(f'{location}/{byte_objects.name}', 'wb') as writer:
                     writer.write(byte_objects.getvalue())
                 byte_objects.close()
-            await random_message.edit(text='<b><i>UPLOADING...</b></i>')
+            await random_message.edit(text='<b><i>uploading...</b></i>')
             location_to_send = []
             for count, images in enumerate(location_of_image, start=1):
                 location_to_send.append(InputMediaPhoto(
@@ -344,7 +344,7 @@ async def primary_task(client: Client, msg: Message, queue=[]) -> None:
             return
     if not printer.fullpage and not printer.type == 'pdf':
         LOGGER.debug(f'WEB_SCRS:{printer.PID} --> split setting not found >> sending directly')
-        await random_message.edit(text='<b><i>UPLOADING...</b></i>')
+        await random_message.edit(text='<b><i>uploading...</b></i>')
         await client.send_chat_action(
             msg.chat.id,
             "upload_photo"
